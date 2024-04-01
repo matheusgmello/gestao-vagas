@@ -9,15 +9,14 @@ import br.com.matheusgmello.gestao_vagas.modules.company.repositories.CompanyRep
 
 @Service
 public class CreateCompanyUseCase {
-  
+
   @Autowired
   private CompanyRepository companyRepository;
 
-  public CompanyEntity execute(CompanyEntity companyEntity){
-
-      this.companyRepository
+  public CompanyEntity execute(CompanyEntity companyEntity) {
+    this.companyRepository
         .findByUsernameOrEmail(companyEntity.getUsername(), companyEntity.getEmail())
-        .ifPresent((user) -> {
+        .ifPresent(user -> {
           throw new UserFoundException();
         });
 

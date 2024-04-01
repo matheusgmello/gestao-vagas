@@ -14,17 +14,15 @@ import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/candidate")
 public class CandidateController {
-
   @Autowired
   private CreateCandidateUseCase createCandidateUseCase;
-  
 
   @PostMapping("/")
   public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity) {
-    try{
-      var result = this.createCandidateUseCase.execute(candidateEntity);
+    try {
+      var result = createCandidateUseCase.execute(candidateEntity);
       return ResponseEntity.ok().body(result);
-    }catch(Exception e){
+    } catch (Exception e) {
       return ResponseEntity.badRequest().body(e.getMessage());
     }
   }

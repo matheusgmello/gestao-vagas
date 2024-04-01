@@ -13,15 +13,16 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class ExceptionHandlerController {
-  
+
   private MessageSource messageSource;
 
-  public ExceptionHandlerController(MessageSource message){
-    this.messageSource = message;
+  public ExceptionHandlerController(MessageSource messageSource) {
+    this.messageSource = messageSource;
   }
 
   @ExceptionHandler(MethodArgumentNotValidException.class)
-  public ResponseEntity<List<ErrorMessageDTO>> handleMethodArgumentNotValidException(MethodArgumentNotValidException e){
+  public ResponseEntity<List<ErrorMessageDTO>> handleMethodArgumentNotValidException(
+      MethodArgumentNotValidException e) {
     List<ErrorMessageDTO> dto = new ArrayList<>();
 
     e.getBindingResult().getFieldErrors().forEach(err -> {
@@ -32,5 +33,4 @@ public class ExceptionHandlerController {
 
     return new ResponseEntity<>(dto, HttpStatus.BAD_REQUEST);
   }
-
 }
