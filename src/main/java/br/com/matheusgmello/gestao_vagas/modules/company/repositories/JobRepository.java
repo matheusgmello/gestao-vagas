@@ -10,5 +10,5 @@ import br.com.matheusgmello.gestao_vagas.modules.company.entities.JobEntity;
 public interface JobRepository extends JpaRepository<JobEntity, UUID> {
 
 
-  List<JobEntity> findByDescriptionContaining(String filter);
+  List<JobEntity> findByDescriptionContainingIgnoreCase(String filter);
 }
