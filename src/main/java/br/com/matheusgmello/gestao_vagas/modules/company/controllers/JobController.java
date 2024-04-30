@@ -13,7 +13,6 @@ import br.com.matheusgmello.gestao_vagas.modules.company.dto.CreateJobDTO;
 import br.com.matheusgmello.gestao_vagas.modules.company.entities.JobEntity;
 import br.com.matheusgmello.gestao_vagas.modules.company.useCases.CreateJobUseCase;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -27,29 +26,30 @@ import jakarta.validation.Valid;
 @RequestMapping("/company/job")
 public class JobController {
 
-  @Autowired
-  private CreateJobUseCase createJobUseCase;
+    @Autowired
+    private CreateJobUseCase createJobUseCase;
 
-  @PostMapping("/")
-  @PreAuthorize("hasRole('COMPANY')")
-  @Tag(name = "Vagas", description = "Informações das vagas")
-  @Operation(summary = "Cadastro de vaga", description = "Essa função é responsável por cadastrar as vagas dentro da empresa")
-  @ApiResponses({
-      @ApiResponse(responseCode = "200", content = {
-          @Content(schema = @Schema(implementation = JobEntity.class))
-      })
-  })
-  @SecurityRequirement(name = "jwt_auth")
-  public JobEntity create(@Valid @RequestBody CreateJobDTO createJobDTO, HttpServletRequest request) {
-    var companyId = request.getAttribute("company_id");
+    @PostMapping("/")
+    @PreAuthorize("hasRole('COMPANY')")
+    @Tag(name = "Vagas", description = "Informações das vagas")
+    @Operation(summary = "Cadastro de vaga", description = "Essa função é responsável por cadastrar as vagas dentro da empresa")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", content = {
+                    @Content(schema = @Schema(implementation = JobEntity.class))
+            })
+    })
+    @SecurityRequirement(name = "jwt_auth")
+    public JobEntity create(@Valid @RequestBody CreateJobDTO createJobDTO, HttpServletRequest request) {
+        var companyId = request.getAttribute("company_id");
 
-    var jobEntity = JobEntity.builder()
-        .benefits(createJobDTO.getBenefits())
-        .companyId(UUID.fromString(companyId.toString()))
-        .description(createJobDTO.getDescription())
-        .level(createJobDTO.getLevel())
-        .build();
+        var jobEntity = JobEntity.builder()
+                .benefits(createJobDTO.getBenefits())
+                .companyId(UUID.fromString(companyId.toString()))
+                .description(createJobDTO.getDescription())
+                .level(createJobDTO.getLevel())
+                .build();
 
-    return createJobUseCase.execute(jobEntity);
-  }
+        return this.createJobUseCase.execute(jobEntity);
+    }
+
 }
