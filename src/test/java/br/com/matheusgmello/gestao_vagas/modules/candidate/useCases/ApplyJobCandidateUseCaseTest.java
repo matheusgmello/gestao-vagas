@@ -1,11 +1,5 @@
 package br.com.matheusgmello.gestao_vagas.modules.candidate.useCases;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
@@ -13,11 +7,19 @@ import static org.mockito.Mockito.when;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+
 import br.com.matheusgmello.gestao_vagas.exceptions.UserNotFoundException;
 import br.com.matheusgmello.gestao_vagas.modules.candidate.CandidateEntity;
 import br.com.matheusgmello.gestao_vagas.modules.candidate.CandidateRepository;
 import br.com.matheusgmello.gestao_vagas.modules.candidate.entity.ApplyJobEntity;
 import br.com.matheusgmello.gestao_vagas.modules.candidate.repository.ApplyJobRepository;
+import br.com.matheusgmello.gestao_vagas.modules.candidate.useCases.ApplyJobCandidateUseCase;
 import br.com.matheusgmello.gestao_vagas.modules.company.entities.JobEntity;
 import br.com.matheusgmello.gestao_vagas.modules.company.repositories.JobRepository;
 
@@ -68,3 +70,4 @@ public class ApplyJobCandidateUseCaseTest {
 
     }
 }
+
