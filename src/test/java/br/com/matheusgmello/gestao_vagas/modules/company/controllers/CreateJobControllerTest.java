@@ -1,5 +1,6 @@
 package br.com.matheusgmello.gestao_vagas.modules.company.controllers;
 
+
 import java.util.UUID;
 
 import org.junit.Before;
