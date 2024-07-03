@@ -3,18 +3,21 @@
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-A API simula a funcionalidade de um sistema de controle de empresas, vagas e aplicações, utilizando os principais pacotes do Spring Boot para persistência, segurança e autorização. Usuários autenticados podem buscar e se candidatar a vagas de empresas parceiras, enquanto usuários com privilégios de ADMIN podem cadastrar novas empresas e vagas na API.
+O projeto simula a funcionalidade de um sistema de controle de empresas, vagas e aplicações, utilizando os principais pacotes do Spring Boot para persistência, segurança e autorização. Candidatos autenticados podem buscar e se candidatar a vagas de empresas parceiras, enquanto empresas podem cadastrar novas empresas e vagas no sistema.
 
 Utilizei Swagger para realizar a documentação completa dos endpoints e JWT para garantir a segurança dos endpoints.
+
 
 ## Tabela de Conteúdos
 
 - [Instalação](#instalação)
 - [Utilização](#utilização)
-- [Endpoints](#api-endpoints)
+- [Rotas](#rotas)
 - [Monitoramento](#monitoramento)
+- [Versão-Web](#web)
 - [Tecnologias](#tecnologias)
-- [Conecte-se](#conecte-se-comigo)
+- [Práticas-Adotadas](#práticas-adotadas)
+- [Autor](#conecte-se-comigo)
 
 
 ## Instalação
@@ -33,7 +36,7 @@ git@github.com:matheusgmello/gestao-vagas.git
 - Rode a aplicação com o Maven.
 - A API vai estar disponivel em `http://localhost:8080`
 
-## API Endpoints
+## Rotas
 
 - Acesse a documentação dos Endpoints através do Swagger `http://localhost:8080/swagger-ui.html`.
 
@@ -42,7 +45,10 @@ git@github.com:matheusgmello/gestao-vagas.git
 - Para monitorar métricas do sistema acesse o Prometheus em `http://localhost:9090`.
 - Para acessar o Grafana e ver as dashboards, acesse `http://localhost:3000`.
 
-## Tecnologias e Práticas adotadas
+## Web
+Para acessar a versão web do projeto, você precisa acessar [Front-Gestão-Vagas](https://github.com/matheusgmello/front-gestao-vagas), onde há um passo a passo para realizar a instalação e subir o projeto.
+
+## Tecnologias
 
 - [Java](https://jdk.java.net/17/)
 - [Spring Actuator](https://www.baeldung.com/spring-boot-actuators)
@@ -58,7 +64,7 @@ git@github.com:matheusgmello/gestao-vagas.git
 - [Prometheus](https://prometheus.io/)
 - [Grafana](https://grafana.com/)
 
-### Práticas Adotadas
+## Práticas Adotadas
 
 - [Qualidade de Código](https://aws.amazon.com/pt/what-is/code-quality/)
 - [UseCases](https://www.avellareduarte.com.br/fases-projetos/conceituacao/demandas-do-publico/pesquisas-de-usuarios-atividades-2/casos-de-uso-use-cases/)
