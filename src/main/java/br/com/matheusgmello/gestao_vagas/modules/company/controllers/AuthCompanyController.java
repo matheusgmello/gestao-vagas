@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.matheusgmello.gestao_vagas.modules.company.dto.AuthCompanyDTO;
 import br.com.matheusgmello.gestao_vagas.modules.company.useCases.AuthCompanyUseCase;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
 @RequestMapping("/company")
@@ -19,6 +21,8 @@ public class AuthCompanyController {
   private AuthCompanyUseCase authCompanyUseCase;
 
   @PostMapping("/auth")
+  @Tag(name = "Empresa", description = "Informações da empresa")
+  @Operation(summary = "Autenticação de empresa", description = "Essa função é responsável por autenticar as empresas")
   public ResponseEntity<Object> create(@RequestBody AuthCompanyDTO authCompanyDTO) {
     try {
       var result = authCompanyUseCase.execute(authCompanyDTO);
