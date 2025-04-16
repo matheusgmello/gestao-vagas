@@ -1,12 +1,12 @@
-# Gestão Vagas 
+# Gestão de Vagas 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-O projeto simula a funcionalidade de um sistema de controle de empresas, vagas e aplicações, utilizando os principais pacotes do Spring Boot para persistência, segurança e autorização. Candidatos autenticados podem buscar e se candidatar a vagas de empresas parceiras, enquanto empresas podem cadastrar novas empresas e vagas no sistema.
+O projeto simula a funcionalidade de um sistema de gestão de empresas, vagas e aplicações de vagas, semelhante ao LinkedIn, que foi construído utilizando Spring Boot, abrangendo persistência, segurança e autorização.
+Candidatos podem se candidatar e buscar vagas de emprego ou optar por criar sua própria empresa, liberando a opção de publicação de novas vagas.
 
-Utilizei Swagger para realizar a documentação completa dos endpoints e JWT para garantir a segurança dos endpoints.
-
+Dentro do projeto, há documentação realizada com Swagger e métricas monitoradas com Prometheus e Grafana.
 
 ## Tabela de Conteúdos
 
@@ -14,7 +14,7 @@ Utilizei Swagger para realizar a documentação completa dos endpoints e JWT par
 - [Utilização](#utilização)
 - [Rotas](#rotas)
 - [Monitoramento](#monitoramento)
-- [Versão-Web](#web)
+- [Web](#web)
 - [Tecnologias](#tecnologias)
 - [Práticas-Adotadas](#práticas-adotadas)
 - [Autor](#conecte-se-comigo)
@@ -46,7 +46,7 @@ git@github.com:matheusgmello/gestao-vagas.git
 - Para acessar o Grafana e ver as dashboards, acesse `http://localhost:3000`.
 
 ## Web
-Para acessar a versão web do projeto, você precisa acessar [Front-Gestão-Vagas](https://github.com/matheusgmello/front-gestao-vagas), onde há um passo a passo para realizar a instalação e subir o projeto.
+Para acessar a versão web do projeto: [Gestão-Vagas](https://github.com/matheusgmello/front-gestao-vagas), é necessário baixar a versão web e realizar o passo a passo.
 
 ## Tecnologias
 
@@ -72,5 +72,3 @@ Para acessar a versão web do projeto, você precisa acessar [Front-Gestão-Vaga
 
 ## Conecte-se comigo
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/matheusgmello)
-[![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](https://www.reddit.com/user/math7zw)
-[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/matheusgmello/)
