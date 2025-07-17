@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Vagas  Disponíveis</title>
+    </head>
+
+    <body class="bg-gray-900">
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-start text-white">
+                    <div class="space-x-4">
+                        <a href="/candidate/profile">Profile</a>
+                        <a href="/candidate/jobs"  class="bg-gray-900 rounded-md px-3 py-2">Vagas</a>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </nav>
+        <div class="container mx-auto mt-24 text-center">
+            <form>
+                <input type="text" name="filter" 
+                class="bg-gray-50 text-gray-500 rounded w-96 p-3 focus:outline-none"
+                placeholder="Busca de vaga" />
+
+                <button class="bg-green-600 hover:bg-green-500 text-white w-24 p-3 ml-2 rounded">Buscar</button>
+            </form>
+
+            <div class="max-w-md mx-auto mt-10">
+                <form th:action="@{/candidate/jobs/apply}" method="post">
+                    <div th:each="job: ${jobs}" class="text-white bg-gray-800 rounded-lg p-4 mb-4 shadow-md text-justify">
+                        <input type="hidden" name="jobId" th:value="${job.id}">
+                        <h3 th:text="${job.description}" class="font-bold"></h3>
+                        <span th:text="${job.level}" class="block"></span>
+                        <span class="mt-4 block font-bold">Benefícios</span>
+                        <span th:text="${job.benefits}" class="block"></span>
+                        <button class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded mt-4">Aplicar</button>
+    
+                    </div>
+                </form>
+                
+            </div>
+            
+        </div>
+    </body>
+</html>

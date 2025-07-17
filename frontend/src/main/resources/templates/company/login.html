@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Login da Empresa</title>
+    </head>
+
+    <body class="bg-sky-950 h-screen items-center flex justify-center">
+        <form action="" class="flex gap-24" th:action="@{/company/signIn}" method="post">
+            <div class="text-white max-w-80 text-6xl flex items-center">
+                Empresa faça o seu login
+            </div>
+            <div class="space-y-8 bg-zinc-950 rounded-md p-20">
+                <input type="text" name="username" class="bg-gray-50 text-gray-900 text-xd rounded w-96 block p-3 focus:outline-none focus:ring-green-600 focus:ring-2" placeholder="Usuário">
+                <input type="password" name="password" class="bg-gray-50 text-gray-900 text-xd rounded w-96 block p-3 focus:outline-none focus:ring-green-600 focus:ring-2" placeholder="Senha">
+                
+                <p class="text-red-400" th:if="${error_message}" th:text="${error_message}" ></p>
+                <button class="bg-green-900 w-96 p-4 rounded text-white hover:bg-green-700">Entrar</button>
+                <a href="/company/create" class="block text-center text-green-700 underline underline-offset-2 hover:text-green-600">Crie sua conta</a>
+                <a href="/candidate/login" class="block text-center text-green-700 underline underline-offset-2 hover:text-green-600 mt-4">Acesso para Candidatos</a>
+            </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Cadastro de Vagas</title>
+    </head>
+
+    <body class="bg-white h-screen flex flex-col">
+        <nav class="bg-zinc-900 p-4 flex justify-between items-center">
+            <div>
+                <a href="/company/jobs" class="text-white text-lg font-semibold">Cadastro</a>
+            </div>
+            <div>
+                <a href="/company/jobs/list" class="text-white text-lg font-semibold">Listagem</a>
+            </div>
+            <div>
+                <a href="/company/logout" class="text-white text-lg font-semibold">Logout</a>
+            </div>
+        </nav>
+
+        <div class="flex-grow flex items-center justify-center">
+            <div class="bg-gray-200 rounded-lg p-8 w-3/4 max-w-xl shadow-lg">
+                <h1 class="text-gray-800 text-3xl mb-6">Cadastro de vagas</h1>
+
+                <form th:action="@{/company/jobs}" th:object="${jobs}" method="post" class="space-y-4">
+                    <div>
+                        <label for="" class="text-gray-700">Descrição da vaga</label>
+                        <input type="text" placeholder="Ex: Desenvolvedor Full Stack"
+                        name="description"
+                        th:field="*{description}"
+                        class="w-full bg-gray-100 text-gray-800 text-lg rounded p-2 focus:outline-none focus:ring-green-600 focus:ring-2"
+                        >
+                    </div>
+                    <div>
+                        <label for="" class="text-gray-700">Nível</label>
+                        <input type="text" placeholder="Ex: Pleno"
+                        name="level"
+                        th:field="*{level}"
+                        class="w-full bg-gray-100 text-gray-800 text-lg rounded p-2 focus:outline-none focus:ring-green-600 focus:ring-2"
+                        >
+                    </div>
+                    <div>
+                        <label for="" class="text-gray-700">Benefícios da vaga</label>
+                        <input type="text" placeholder="Ex: Gympass"
+                        name="benefits"
+                        th:field="*{benefits}"
+                        class="w-full bg-gray-100 text-gray-800 text-lg rounded p-2 focus:outline-none focus:ring-green-600 focus:ring-2"
+                        >
+                    </div>
+                    <div>
+                        <button class="bg-green-900 w-full py-3 rounded text-white text-lg hover:bg-green-700">Cadastrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

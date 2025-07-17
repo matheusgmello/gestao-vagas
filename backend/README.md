@@ -1,60 +1,31 @@
-<div>
-  <table>
-  <tr>
-    <td><img src="images/cover.png" alt="Home page do projeto"></td>
-  </table>
-  </tr>
-</div>
-
-# Gestão de Vagas 
+# Gestão de Vagas API
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring](https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Este projeto é um sistema de gestão de empresas e vagas, inspirado no LinkedIn. <br>
-Permite que candidatos e empresas se cadastrem. Empresas podem publicar vagas, e candidatos podem aplicar suas candidaturas.<br>
-Com uma interface interativa, você pode consultar vagas, perfis, empresas e acompanhar suas aplicações.
+A API do projeto já vem pronta para monitoramento e documentação. Ela inclui Swagger para documentação e Prometheus com Grafana para métricas detalhadas.
+E tbm utilizei práticas como `UseCases`.
 
+Para começar, basta executar `docker compose up -d` e acessar `localhost:8080` para testar.
 
 ## Tabela de Conteúdos
 
-- [Instalação](#instalação)
 - [Rotas](#rotas)
 - [Monitoramento](#monitoramento)
-- [Web](#web)
 - [Tecnologias](#tecnologias)
+- [Práticas-Adotadas](#práticas-adotadas)
+- [Autor](#conecte-se-comigo)
 
-
-## Instalação
-
-**Clone o projeto e acesse a pasta**
-
-```bash
-git@github.com:matheusgmello/gestao-vagas.git
-```
-- Instale as dependências com o Maven.
-- Configure as variáveis de ambiente no arquivo `application.properties`.
-- Suba o Docker `docker compose up -d`
-
-
-- Rode a aplicação com o Maven.
-- A API vai estar disponivel em `http://localhost:8080`
 
 ## Rotas
 
 - Acesse a documentação dos Endpoints através do Swagger `http://localhost:8080/swagger-ui.html`.
-- Mais [detalhes](backend\README.md)
+- Caso queria modificar alguma config, acesse o modulo de `config & security`
+
 ## Monitoramento
 
 - Para monitorar métricas do sistema acesse o Prometheus em `http://localhost:9090`.
 - Para acessar o Grafana e ver as dashboards, acesse `http://localhost:3000`.
-
-## Web
-- Instale as dependências com o Maven.
-- Suba a aplicação com o Maven via terminal (`mvn spring-boot:run`)
-- Acesse (`http://localhost:8082`)
-
-- Mais [detalhes](frontend\README.md)
 
 ## Tecnologias
 
@@ -71,6 +42,12 @@ git@github.com:matheusgmello/gestao-vagas.git
 - [Jaccoco](https://www.eclemma.org/jacoco/)
 - [Prometheus](https://prometheus.io/)
 - [Grafana](https://grafana.com/)
+
+## Práticas Adotadas
+
+- [Qualidade de Código](https://aws.amazon.com/pt/what-is/code-quality/)
+- [UseCases](https://www.avellareduarte.com.br/fases-projetos/conceituacao/demandas-do-publico/pesquisas-de-usuarios-atividades-2/casos-de-uso-use-cases/)
+- [JSON Web Token](https://www.treinaweb.com.br/blog/o-que-e-jwt)
 
 ## Conecte-se comigo
 [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/matheusgmello)

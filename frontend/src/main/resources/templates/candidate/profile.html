@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Perfil do Candidato</title>
+    </head>
+
+    <body class="bg-gray-900">
+        <nav class="bg-gray-800">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-start text-white">
+                    <div class="space-x-4">
+                        <a href="/candidate/profile" class="bg-gray-900 rounded-md px-3 py-2">Profile</a>
+                        <a href="/candidate/jobs">Vagas</a>
+
+                    </div>
+                   
+                </div>
+            </div>
+        </nav>
+        <div class="container mx-auto mt-8">
+            <div class="bg-gray-800 p-8 rounded-lg shadow-md">
+
+                <h1 class="text-2xl font-bold text-gray-100 text-center mb-8" th:text="${user.name}" ></h1>
+               
+
+                <form th:object="${user}">
+                    <div class="text-center mb-4">
+                        <p class="text-gray-400">
+                            <span class="font-bold">Usuário: </span> <span th:text="${user.username}" ></span>
+                        </p>
+    
+                        <p class="text-gray-400">
+                            <span class="font-bold">E-mail: </span> <span th:text="${user.email}" ></span>
+                        </p>
+    
+                        <p class="text-gray-400">
+                            <span class="font-bold">Descrição: </span> <span th:text="${user.description}" ></span>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
