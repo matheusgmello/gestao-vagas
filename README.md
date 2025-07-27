@@ -43,7 +43,7 @@ git@github.com:matheusgmello/gestao-vagas.git
 ## Rotas
 
 - Acesse a documentação dos Endpoints através do Swagger `http://localhost:8080/swagger-ui.html`.
-- Mais [detalhes](backend\README.md)
+- Mais [detalhes](https://github.com/matheusgmello/gestao-vagas/blob/main/backend/README.md)
 ## Monitoramento
 
 - Para monitorar métricas do sistema acesse o Prometheus em `http://localhost:9090`.
@@ -54,7 +54,7 @@ git@github.com:matheusgmello/gestao-vagas.git
 - Suba a aplicação com o Maven via terminal (`mvn spring-boot:run`)
 - Acesse (`http://localhost:8082`)
 
-- Mais [detalhes](frontend\README.md)
+- Mais [detalhes](https://github.com/matheusgmello/gestao-vagas/blob/main/frontend/README.md)
 
 ## Tecnologias
 
