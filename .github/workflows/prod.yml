@@ -31,7 +31,7 @@ jobs:
               with:
                 context: ./backend
                 push: true
-                tags: ${{ secrets.DOCKER_USERNAME }}/gestao_vagas:latest
+                tags: "${{ secrets.DOCKER_USERNAME }}/gestao_vagas:latest"
     deploy:
         needs: build
         runs-on: self-hosted
