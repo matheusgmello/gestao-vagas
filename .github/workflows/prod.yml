@@ -21,12 +21,17 @@ jobs:
                  java-version: 17
             - name: Build project
               run: mvn clean install
-            - name: Login docker
-              run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
-            - name: Build docker image
-              run: docker build -t rocketseat-education/gestao_vagas .
-            - name: Publish image
-              run: docker push rocketseat-education/gestao_vagas
+            - name: Login to Docker Hub
+              uses: docker/login-action@v2
+              with:
+                username: ${{ secrets.DOCKER_USERNAME }}
+                password: ${{ secrets.DOCKER_PASSWORD }}
+            - name: Build and push
+              uses: docker/build-push-action@v4
+              with:
+                context: ./backend
+                push: true
+                tags: rocketseat-education/gestao_vagas:latest
     deploy:
         needs: build
         runs-on: self-hosted
