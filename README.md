@@ -1,9 +1,9 @@
 <div>
   <table>
-  <tr>
-    <td><img src="images/cover.png" alt="Home page do projeto"></td>
+    <tr>
+      <td><img src="images/cover.png" alt="Home page do projeto"></td>
+    </tr>
   </table>
-  </tr>
 </div>
 
 # Gestão de Vagas 
@@ -27,34 +27,37 @@ Com uma interface interativa, você pode consultar vagas, perfis, empresas e aco
 
 ## Instalação
 
-**Clone o projeto e acesse a pasta**
+**Clone o projeto:**
 
 ```bash
-git@github.com:matheusgmello/gestao-vagas.git
+git clone git@github.com:matheusgmello/gestao-vagas.git
 ```
-- Instale as dependências com o Maven.
+
+### Backend (API)
+- Acesse a pasta: `cd backend`
+- Instale as dependências com o Maven: `mvn clean install`
 - Configure as variáveis de ambiente no arquivo `application.properties`.
-- Suba o Docker `docker compose up -d`
-
-
-- Rode a aplicação com o Maven.
-- A API vai estar disponivel em `http://localhost:8080`
+- Suba o Docker: `docker compose up -d`
+- Rode a aplicação com o Maven: `mvn spring-boot:run`
+- A API vai estar disponível em `http://localhost:8080`
 
 ## Rotas
 
 - Acesse a documentação dos Endpoints através do Swagger `http://localhost:8080/swagger-ui.html`.
-- Mais [detalhes](https://github.com/matheusgmello/gestao-vagas/blob/main/backend/README.md)
+- Mais [detalhes](backend/README.md)
+
 ## Monitoramento
 
 - Para monitorar métricas do sistema acesse o Prometheus em `http://localhost:9090`.
 - Para acessar o Grafana e ver as dashboards, acesse `http://localhost:3000`.
 
-## Web
-- Instale as dependências com o Maven.
-- Suba a aplicação com o Maven via terminal (`mvn spring-boot:run`)
-- Acesse (`http://localhost:8082`)
+## Web (Frontend)
+- Acesse a pasta: `cd frontend`
+- Instale as dependências com o Maven: `mvn clean install`
+- Suba a aplicação com o Maven via terminal: `mvn spring-boot:run`
+- Acesse: `http://localhost:8082`
 
-- Mais [detalhes](https://github.com/matheusgmello/gestao-vagas/blob/main/frontend/README.md)
+- Mais [detalhes](frontend/README.md)
 
 ## Tecnologias
 
