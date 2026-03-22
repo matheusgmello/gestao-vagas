@@ -31,14 +31,14 @@ jobs:
               with:
                 context: ./backend
                 push: true
-                tags: "${{ secrets.DOCKER_USERNAME }}/gestao_vagas:latest"
+                tags: ${{ secrets.DOCKER_USERNAME || github.repository_owner }}/gestao_vagas:latest
     deploy:
         needs: build
         runs-on: self-hosted
         steps:
             - name: Pull image docker hub 
-              run: docker pull ${{ secrets.DOCKER_USERNAME }}/gestao_vagas:latest
+              run: docker pull ${{ secrets.DOCKER_USERNAME || github.repository_owner }}/gestao_vagas:latest
             - name: remove container
               run: docker rm -f gestao-vagas || true
             - name: Run docker container gestao-vagas
-              run: docker run -d -p 8080:8080 -e DATABASE_URL=${{secrets.DATABASE_URL}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} -e DATABASE_NAME=${{secrets.DATABASE_NAME}} --name gestao-vagas ${{ secrets.DOCKER_USERNAME }}/gestao_vagas
+              run: docker run -d -p 8080:8080 -e DATABASE_URL=${{secrets.DATABASE_URL}} -e DATABASE_PASSWORD='${{secrets.DATABASE_PASSWORD}}' -e DATABASE_USERNAME=${{secrets.DATABASE_USERNAME}} -e DATABASE_NAME=${{secrets.DATABASE_NAME}} --name gestao-vagas ${{ secrets.DOCKER_USERNAME || github.repository_owner }}/gestao_vagas
